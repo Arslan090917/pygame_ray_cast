@@ -1,10 +1,6 @@
 import pygame
 import sys
-import time
-pygame.init()
 
-size = width, height = 1024, 720
-speed = [1, 1]
 black = 0, 0, 0
 
 
