@@ -1,6 +1,8 @@
 import pygame
 import sys
 
+size = width, height = 680, 680
+speed = [2, 2]
 black = 0, 0, 0
 
 
