@@ -17,10 +17,10 @@ while 1:
 
     ballrect = ballrect.move(speed)
     if ballrect.left < 0 or ballrect.right > width:
-        speed[0] = -speed[0] * 2
+        speed[0] = -speed[0] * 3
 
     if ballrect.top < 0 or ballrect.bottom > height:
-        speed[1] = -speed[1] * 2
+        speed[1] = -speed[1] * 3
 
     screen.fill(black)
     screen.blit(cock, ballrect)
