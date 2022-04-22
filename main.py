@@ -1,16 +1,25 @@
-# This is a sample Python script.
+import pygame
+import sys
+pygame.init()
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+size = width, height = 320, 240
+speed = [2, 2]
+black = 0, 0,
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+screen = pygame.display.set_mode(size)
+ball = pygame.image.load("intro_ball.gif")
+ballrect = ball.get_rect()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+while 1:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT: sys.exit()
+
+    ballrect = ballrect.move(speed)
+    if ballrect.left < 0 or ballrect.right > width:
+        speed[0] = -speed[0]
+    if ballrect.top < 0 or ballrect.bottom > height:
+        speed[1] = -speed[1]
+    screen.fill(black)
+    screen.blit(ball, ballrect)
+    pygame.display.flip()
